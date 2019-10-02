@@ -37,9 +37,6 @@
                         <h4 class="panel-title">Current Reservations</h4>
                     </div>
                     <div class="panel-body" id="tableSection">
-                        <div class="well" id="tableWell-01">
-                            <h2><span class="label label-primary">1</span> | willie</h2>
-                        </div>
                     </div>
                 </div>
 
@@ -72,7 +69,31 @@
     </div>
 
     <script type="text/javascript">
-     
+
+$(document).ready(function() {
+            $.get("/api/reservations", function(data) {
+                console.log(data);
+                
+                for (let i = 0; i < data.length; i++) {
+                    if (i !== 5) {
+                        var newDiv = $('<div>');
+                        newDiv.addClass('well');
+                        newDiv.attr('id', 'tableWell-' + i + 1);
+
+                        var newh2 = $('<h2>');
+                        newh2.html( '<span class="label label-primary">'+(i+1)+'</span>'+data[i].name);
+
+
+                        newDiv.append(newh2);
+
+                        $('#tableSection').append(newDiv);
+                    }
+
+                }
+            })
+        })
+
+
 
     </script>
 </body>
