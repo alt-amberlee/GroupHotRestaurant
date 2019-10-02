@@ -1,0 +1,25 @@
+{
+  "name": "GroupHotRestaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alt-amberlee/GroupHotRestaurant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alt-amberlee/GroupHotRestaurant/issues"
+  },
+  "homepage": "https://github.com/alt-amberlee/GroupHotRestaurant#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
