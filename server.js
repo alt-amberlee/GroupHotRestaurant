@@ -13,25 +13,25 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 var reservations = [{
-        id: "yoda",
-        name: "Yoda",
-        email: "JediMaster@gmail.com",
+        id: "Josh",
+        name: "Joshua Jonas",
+        email: "JoshJj@gmail.com",
         number: 900 - 999 - 9999
     },
     {
-        id: "darthmaul",
-        name: "Darth Maul",
-        email: "SithLord@gmail.com",
+        id: "HotRestaurant",
+        name: "Hot Restaurant",
+        email: "HOtREst@gmail.com",
         number: 200 - 222 - 2222
     }
 ];
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "viewReservations.html"));
+    res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/home", function(req, res) {
-    res.sendFile(path.join(__dirname, "home.html"));
+app.get("/viewReservations", function(req, res) {
+    res.sendFile(path.join(__dirname, "viewReservations.html"));
 });
 
 app.get("/add", function(req, res) {
