@@ -42,6 +42,8 @@ app.get("/api/reservations", function(req, res) {
     return res.json(reservations);
 });
 
+app.get('')
+
 app.get("/api/reservations/:reservations", function(req, res) {
     var chosen = req.params.reservations;
 
