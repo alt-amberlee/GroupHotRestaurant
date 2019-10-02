@@ -21,7 +21,7 @@
             <br>
 
             <div class="text-center">
-                <a href="/add.html"><button type="button" class="btn btn-lg btn-danger"><span
+                <a href="/add"><button type="button" class="btn btn-lg btn-danger"><span
                             class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
                 <a href="/"><button type="button" class="btn btn-lg btn-default"><span
                             class="glyphicon glyphicon-home"></span>Home</button></a>
@@ -46,12 +46,7 @@
                         <h4 class="panel-title">Waiting List</h4>
                     </div>
                     <div class="panel-body" id="waitlistSection">
-                        <div class="well" id="waitlistWell-01">
-                            <h2><span class="label label-primary">1</span> | taco</h2>
-                        </div>
-                        <div class="well" id="waitlistWell-11">
-                            <h2><span class="label label-primary">2</span> | HelloThere</h2>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -73,9 +68,9 @@
 $(document).ready(function() {
             $.get("/api/reservations", function(data) {
                 console.log(data);
-                
+                var id = 1;
                 for (let i = 0; i < data.length; i++) {
-                    if (i !== 5) {
+                    if (i < 5) {
                         var newDiv = $('<div>');
                         newDiv.addClass('well');
                         newDiv.attr('id', 'tableWell-' + i + 1);
@@ -88,6 +83,20 @@ $(document).ready(function() {
 
                         $('#tableSection').append(newDiv);
                     }
+
+                else {
+                    var newDiv = $('<div>');
+                        newDiv.addClass('well');
+                        newDiv.attr('id', 'waitlistWell-' + i + 1);
+
+                        var newh2 = $('<h2>');
+                        newh2.html( '<span class="label label-primary">'+(id)+'</span>'+data[i].name);
+                        id++;
+
+                        newDiv.append(newh2);
+
+                        $('#waitlistSection').append(newDiv);
+                }
 
                 }
             })
