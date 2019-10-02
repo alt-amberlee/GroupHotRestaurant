@@ -27,11 +27,11 @@ var reservations = [{
 ];
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "viewReservations.html"));
+    res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/home", function(req, res) {
-    res.sendFile(path.join(__dirname, "home.html"));
+app.get("/viewReservations", function(req, res) {
+    res.sendFile(path.join(__dirname, "viewReservations.html"));
 });
 
 app.get("/add", function(req, res) {
